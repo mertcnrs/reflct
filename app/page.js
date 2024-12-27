@@ -51,7 +51,7 @@ export default async function LandingPage() {
       {/* Hero Section */}
       <div className="max-w-5xl mx-auto text-center space-y-8">
         <h1 className="text-5xl md:text-7xl lg:text-8xl gradient-title mb-6">
-          Your Space to Reflect. <br /> Your Story to Tell.
+          Merhaba Ben Mert. <br /> Your Story to Tell.
         </h1>
         <p className="text-lg md:text-xl text-orange-800 mb-8">
           Capture your thoughts, track your moods, and reflect on your journey
