@@ -30,7 +30,7 @@ const CollectionForm = ({ onSuccess, loading, open, setOpen }) => {
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>Create New Collection</DialogTitle>
+          <DialogTitle>Yeni Koleksiyon Oluştur</DialogTitle>
         </DialogHeader>
         {loading && (
           <BarLoader className="mb-4" width={"100%"} color="orange" />
@@ -38,10 +38,10 @@ const CollectionForm = ({ onSuccess, loading, open, setOpen }) => {
 
         <form onSubmit={onSubmit} className="space-y-6">
           <div className="space-y-2">
-            <label className="text-sm font-medium">Collection Name</label>
+            <label className="text-sm font-medium">Koleksiyon Adı</label>
             <Input
               {...register("name")}
-              placeholder="Enter collection name..."
+              placeholder="Koleksiyon adını girin..."
               className={errors.name ? "border-red-500" : ""}
             />
             {errors.name && (
@@ -51,11 +51,11 @@ const CollectionForm = ({ onSuccess, loading, open, setOpen }) => {
 
           <div className="space-y-2">
             <label className="text-sm font-medium">
-              Description (Optional)
+              Açıklama (İsteğe Bağlı)
             </label>
             <Textarea
               {...register("description")}
-              placeholder="Describe your collection..."
+              placeholder="Koleksiyonunuzu tanımlayın..."
               className={errors.description ? "border-red-500" : ""}
             />
             {errors.description && (
@@ -71,10 +71,10 @@ const CollectionForm = ({ onSuccess, loading, open, setOpen }) => {
               variant="ghost"
               onClick={() => setOpen(false)}
             >
-              Cancel
+              İptal
             </Button>
             <Button type="submit" variant="journal">
-              Create Collection
+              Koleksiyon Oluştur
             </Button>
           </div>
         </form>

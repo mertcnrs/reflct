@@ -65,11 +65,11 @@ export function JournalFilters({ entries }) {
 
   return (
     <>
-      {/* Filters */}
+      {/* Filtreler */}
       <div className="flex flex-wrap gap-4">
         <div className="flex-1 min-w-[200px]">
           <Input
-            placeholder="Search entries..."
+            placeholder="Girdilerde ara..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             className="w-full"
@@ -79,7 +79,7 @@ export function JournalFilters({ entries }) {
 
         <Select value={selectedMood} onValueChange={setSelectedMood}>
           <SelectTrigger className="w-[150px]">
-            <SelectValue placeholder="Filter by mood" />
+            <SelectValue placeholder="Ruh haline göre filtrele" />
           </SelectTrigger>
           <SelectContent>
             {Object.values(MOODS).map((mood) => (
@@ -102,7 +102,7 @@ export function JournalFilters({ entries }) {
               )}
             >
               <CalendarIcon className="h-4 w-4" />
-              {date ? format(date, "PPP") : <span>Pick a date</span>}
+              {date ? format(date, "PPP") : <span>Tarih seçin</span>}
             </Button>
           </PopoverTrigger>
           <PopoverContent className="w-auto p-0">
@@ -121,20 +121,20 @@ export function JournalFilters({ entries }) {
             onClick={clearFilters}
             className="text-orange-600"
           >
-            Clear Filters
+            Filtreleri Temizle
           </Button>
         )}
       </div>
 
-      {/* Results Summary */}
+      {/* Sonuç Özeti */}
       <div className="text-sm text-gray-500">
-        Showing {filteredEntries.length} of {entries.length} entries
+        {filteredEntries.length} girdiden {entries.length} gösteriliyor
       </div>
 
-      {/* Entries List */}
+      {/* Girdi Listesi */}
       {filteredEntries.length === 0 ? (
         <div className="text-center p-8">
-          <p className="text-gray-500">No entries found</p>
+          <p className="text-gray-500">Hiçbir girdi bulunamadı</p>
         </div>
       ) : (
         <div className="flex flex-col gap-4">

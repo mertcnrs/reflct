@@ -10,7 +10,7 @@ export default function WriteLayout({ children }) {
           href="/dashboard"
           className="text-sm text-orange-600 hover:text-orange-700 cursor-pointer"
         >
-          ← Back to Dashboard
+          ← Panoya Geri Dön
         </Link>
       </div>
       <Suspense fallback={<BarLoader color="orange" width={"100%"} />}>

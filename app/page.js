@@ -25,21 +25,21 @@ import faqs from "@/data/faqs";
 const features = [
   {
     icon: Book,
-    title: "Rich Text Editor",
+    title: "Zengin Metin Editörü",
     description:
-      "Express yourself with a powerful editor supporting markdown, formatting, and more.",
+      "Markdown, biçimlendirme ve daha fazlasını destekleyen güçlü bir editörle kendinizi ifade edin.",
   },
   {
     icon: Sparkles,
-    title: "Daily Inspiration",
+    title: "Günlük İlham",
     description:
-      "Get inspired with daily prompts and mood-based imagery to spark your creativity.",
+      "Yaratıcılığınızı ateşlemek için günlük öneriler ve ruh hali tabanlı görsellerle ilham alın.",
   },
   {
     icon: Lock,
-    title: "Secure & Private",
+    title: "Güvenli ve Özel",
     description:
-      "Your thoughts are safe with enterprise-grade security and privacy features.",
+      "Düşünceleriniz, kurumsal düzeyde güvenlik ve gizlilik özellikleriyle güvende.",
   },
 ];
 
@@ -51,11 +51,11 @@ export default async function LandingPage() {
       {/* Hero Section */}
       <div className="max-w-5xl mx-auto text-center space-y-8">
         <h1 className="text-5xl md:text-7xl lg:text-8xl gradient-title mb-6">
-          Merhaba Ben Mert. <br /> Your Story to Tell.
+          Yansıtılacak Alanınız. <br /> Anlatacak Hikayeniz.
         </h1>
         <p className="text-lg md:text-xl text-orange-800 mb-8">
-          Capture your thoughts, track your moods, and reflect on your journey
-          in a beautiful, secure space.
+          Düşüncelerinizi yakalayın, ruh halinizi takip edin ve yolculuğunuza yansıtın
+          güzel ve güvenli bir alanda.
         </p>
         <div className="relative">
           <div className="absolute inset-0 bg-gradient-to-t from-orange-50 via-transparent to-transparent pointer-events-none z-10" />
@@ -64,7 +64,7 @@ export default async function LandingPage() {
               <div className="flex items-center gap-2">
                 <Calendar className="h-5 w-5 text-orange-600" />
                 <span className="text-orange-900 font-medium">
-                  Today&rsquo;s Entry
+                  Bugünkü Giriş
                 </span>
               </div>
               <div className="flex gap-2">
@@ -89,7 +89,7 @@ export default async function LandingPage() {
               variant="journal"
               className="px-8 py-6 rounded-full flex items-center gap-2"
             >
-              Start Writing <ChevronRight className="h-5 w-5" />
+              Yazmaya Başla <ChevronRight className="h-5 w-5" />
             </Button>
           </Link>
           <Link href="#features">
@@ -97,7 +97,7 @@ export default async function LandingPage() {
               variant="outline"
               className="px-8 py-6 rounded-full border-orange-600 text-orange-600 hover:bg-orange-100"
             >
-              Learn More
+              Daha fazla bilgi
             </Button>
           </Link>
         </div>
@@ -131,19 +131,19 @@ export default async function LandingPage() {
               <FileText className="h-6 w-6 text-orange-600" />
             </div>
             <h3 className="text-2xl font-bold text-orange-900">
-              Rich Text Editor
+              Zengin Metin Düzenleyici
             </h3>
             <p className="text-lg text-orange-700">
-              Express yourself fully with our powerful editor featuring:
+              Aşağıdaki özelliklere sahip güçlü düzenleyicimizle kendinizi tam olarak ifade edin:
             </p>
             <ul className="space-y-3">
               <li className="flex items-center gap-2">
                 <div className="h-2 w-2 rounded-full bg-orange-400" />
-                <span>Format text with ease</span>
+                <span>Metni kolaylıkla biçimlendirin</span>
               </li>
               <li className="flex items-center gap-2">
                 <div className="h-2 w-2 rounded-full bg-orange-400" />
-                <span>Embed links</span>
+                <span>Bağlantıları yerleştir</span>
               </li>
             </ul>
           </div>
@@ -168,19 +168,19 @@ export default async function LandingPage() {
               <BarChart2 className="h-6 w-6 text-orange-600" />
             </div>
             <h3 className="text-2xl font-bold text-orange-900">
-              Mood Analytics
+              Ruh Hali Analitiği
             </h3>
             <p className="text-lg text-orange-700">
-              Track your emotional journey with powerful analytics:
+              Güçlü analitiklerle duygusal yolculuğunuzu takip edin:
             </p>
             <ul className="space-y-3">
               <li className="flex items-center gap-2">
                 <div className="h-2 w-2 rounded-full bg-orange-400" />
-                <span>Visual mood trends</span>
+                <span>Görsel ruh hali eğilimleri</span>
               </li>
               <li className="flex items-center gap-2">
                 <div className="h-2 w-2 rounded-full bg-orange-400" />
-                <span>Pattern recognition</span>
+                <span>Desen tanıma</span>
               </li>
             </ul>
           </div>
@@ -202,7 +202,7 @@ export default async function LandingPage() {
       {/* FAQ Section */}
       <div className="mt-24">
         <h2 className="text-3xl font-bold text-center text-orange-900 mb-12">
-          Frequently Asked Questions
+          Sıkça Sorulan Sorular
         </h2>
         <Accordion type="single" collapsible className="w-full mx-auto">
           {faqs.map((faq, index) => (
@@ -223,14 +223,13 @@ export default async function LandingPage() {
         <Card className="bg-gradient-to-r from-orange-100 to-amber-100">
           <CardContent className="p-12 text-center">
             <h2 className="text-3xl font-bold text-orange-900 mb-6">
-              Start Reflct-ing on Your Journey Today
+              Bugün Yolculuğunuza Reflct ile Başlayın
             </h2>
             <p className="text-lg text-orange-700 mb-8 max-w-2xl mx-auto">
-              Join thousands of writers who have already discovered the power of
-              digital journaling.
+              Dijital günlük tutmanın gücünü keşfetmiş binlerce yazara katılın.
             </p>
             <Button size="lg" variant="journal" className="animate-bounce">
-              Get Started for Free <ChevronRight className="ml-2 h-4 w-4" />
+              Ücretsiz Başlayın <ChevronRight className="ml-2 h-4 w-4" />
             </Button>
           </CardContent>
         </Card>

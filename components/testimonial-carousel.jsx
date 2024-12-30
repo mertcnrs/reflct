@@ -16,7 +16,7 @@ const TestimonialCarousel = () => {
   return (
     <div className="mt-24">
       <h2 className="text-3xl font-bold text-center text-orange-900 mb-12">
-        What Our Writers Say
+      Yazarlarımız Ne Diyor
       </h2>
       <Carousel
         plugins={[

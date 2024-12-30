@@ -10,7 +10,7 @@ export default function CollectionLayout({ children }) {
           href="/dashboard"
           className="text-sm text-orange-600 hover:text-orange-700"
         >
-          ← Back to Dashboard
+          ← Panoya Geri Dön
         </Link>
       </div>
       <Suspense fallback={<Loading />}>{children}</Suspense>

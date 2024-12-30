@@ -28,9 +28,9 @@ import {
 import Link from "next/link";
 
 const timeOptions = [
-  { value: "7d", label: "Last 7 Days" },
-  { value: "15d", label: "Last 15 Days" },
-  { value: "30d", label: "Last 30 Days" },
+  { value: "7d", label: "Son 7 Gün" },
+  { value: "15d", label: "Son 15 Gün" },
+  { value: "30d", label: "Son 30 Gün" },
 ];
 
 const MoodAnalytics = () => {
@@ -63,8 +63,8 @@ const MoodAnalytics = () => {
           <p className="font-medium">
             {format(parseISO(label), "MMM d, yyyy")}
           </p>
-          <p className="text-orange-600">Average Mood: {payload[0].value}</p>
-          <p className="text-blue-600">Entries: {payload[1].value}</p>
+          <p className="text-orange-600">Ortalama Ruh Hali: {payload[0].value}</p>
+          <p className="text-blue-600">Girdiler: {payload[1].value}</p>
         </div>
       );
     }
@@ -74,7 +74,7 @@ const MoodAnalytics = () => {
   return (
     <>
       <div className="flex justify-between items-center">
-        <h2 className="text-5xl font-bold gradient-title">Dashboard</h2>
+        <h2 className="text-5xl font-bold gradient-title">Gösterge Paneli</h2>
 
         <Select value={period} onValueChange={setPeriod}>
           <SelectTrigger className="w-[140px]">
@@ -92,25 +92,25 @@ const MoodAnalytics = () => {
 
       {analytics.data.entries.length === 0 ? (
         <div>
-          No Entries Found.{" "}
+          Hiçbir Girdi Bulunamadı.{" "}
           <Link href="/journal/write" className="underline text-orange-400">
-            Write New
+            Yeni Yaz
           </Link>
         </div>
       ) : (
         <div className="space-y-6">
-          {/* Stats Cards */}
+          {/* İstatistik Kartları */}
           <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             <Card>
               <CardHeader className="pb-2">
                 <CardTitle className="text-sm font-medium">
-                  Total Entries
+                  Toplam Girdiler
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="text-2xl font-bold">{stats.totalEntries}</div>
                 <p className="text-xs text-muted-foreground">
-                  ~{stats.dailyAverage} entries per day
+                  ~{stats.dailyAverage} günlük ortalama girdi
                 </p>
               </CardContent>
             </Card>
@@ -118,7 +118,7 @@ const MoodAnalytics = () => {
             <Card>
               <CardHeader className="pb-2">
                 <CardTitle className="text-sm font-medium">
-                  Average Mood
+                  Ortalama Ruh Hali
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -126,7 +126,7 @@ const MoodAnalytics = () => {
                   {stats.averageScore}/10
                 </div>
                 <p className="text-xs text-muted-foreground">
-                  Overall mood score
+                  Genel ruh hali puanı
                 </p>
               </CardContent>
             </Card>
@@ -134,7 +134,7 @@ const MoodAnalytics = () => {
             <Card>
               <CardHeader className="pb-2">
                 <CardTitle className="text-sm font-medium">
-                  Mood Summary
+                  Ruh Hali Özeti
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -146,10 +146,10 @@ const MoodAnalytics = () => {
             </Card>
           </div>
 
-          {/* Mood Timeline Chart */}
+          {/* Ruh Hali Zaman Çizelgesi Grafiği */}
           <Card>
             <CardHeader>
-              <CardTitle>Mood Timeline</CardTitle>
+              <CardTitle>Ruh Hali Zaman Çizelgesi</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="h-[300px] w-full">
@@ -181,7 +181,7 @@ const MoodAnalytics = () => {
                       type="monotone"
                       dataKey="averageScore"
                       stroke="#f97316"
-                      name="Average Mood"
+                      name="Ortalama Ruh Hali"
                       strokeWidth={2}
                     />
                     <Line
@@ -189,7 +189,7 @@ const MoodAnalytics = () => {
                       type="monotone"
                       dataKey="entryCount"
                       stroke="#3b82f6"
-                      name="Number of Entries"
+                      name="Girdi Sayısı"
                       strokeWidth={2}
                     />
                   </LineChart>

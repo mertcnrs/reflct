@@ -1,18 +1,18 @@
 [
   {
-    "q": "Is my journal data secure?",
-    "a": "Yes! We use enterprise-grade encryption and security measures to ensure your entries remain private and secure."
+    "q": "Günlük verilerim güvende mi?",
+    "a": "Evet! Girdilerinizin özel ve güvende kalmasını sağlamak için kurumsal düzeyde şifreleme ve güvenlik önlemleri kullanıyoruz."
   },
   {
-    "q": "Can I organize my journal entries?",
-    "a": "Yes! Use folders, collections, and tags to keep your entries structured. You can also filter by date, mood, or collection."
+    "q": "Günlük girdilerimi organize edebilir miyim?",
+    "a": "Evet! Girdilerinizi düzenli tutmak için klasörler, koleksiyonlar ve etiketler kullanabilirsiniz. Ayrıca tarih, ruh hali veya koleksiyona göre filtreleyebilirsiniz."
   },
   {
-    "q": "How does the mood tracking work?",
-    "a": "Each entry can be tagged with a mood, and our analytics tool creates visual representations of your emotional journey over time."
+    "q": "Ruh hali takibi nasıl çalışır?",
+    "a": "Her giriş bir ruh hali ile etiketlenebilir ve analiz aracımız zaman içinde duygusal yolculuğunuzun görsel temsillerini oluşturur."
   },
   {
-    "q": "Is there a mobile app?",
-    "a": "Our platform is fully responsive and works beautifully on all devices. A dedicated mobile app is coming soon!"
+    "q": "Mobil uygulama var mı?",
+    "a": "Platformumuz tamamen duyarlıdır ve tüm cihazlarda mükemmel çalışır. Özel bir mobil uygulama yakında geliyor!"
   }
 ]

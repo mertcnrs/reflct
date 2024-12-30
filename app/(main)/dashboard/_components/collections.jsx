@@ -19,8 +19,8 @@ const Collections = ({ collections = [], entriesByCollection }) => {
   useEffect(() => {
     if (createdCollection) {
       setIsCollectionDialogOpen(false);
-      fetchCollections(); // Refresh collections list
-      toast.success(`Collection ${createdCollection.name} created!`);
+      fetchCollections(); // Koleksiyon listesini yenile
+      toast.success(`Koleksiyon ${createdCollection.name} oluşturuldu!`);
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -34,24 +34,24 @@ const Collections = ({ collections = [], entriesByCollection }) => {
 
   return (
     <section id="collections" className="space-y-6">
-      <h2 className="text-3xl font-bold gradient-title">Collections</h2>
+      <h2 className="text-3xl font-bold gradient-title">Koleksiyonlar</h2>
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {/* Create New Collection Button */}
+        {/* Yeni Koleksiyon Oluştur Butonu */}
         <CollectionPreview
           isCreateNew={true}
           onCreateNew={() => setIsCollectionDialogOpen(true)}
         />
 
-        {/* Unorganized Collection */}
+        {/* Düzenlenmemiş Koleksiyon */}
         {entriesByCollection?.unorganized?.length > 0 && (
           <CollectionPreview
-            name="Unorganized"
+            name="Düzenlenmemiş"
             entries={entriesByCollection.unorganized}
             isUnorganized={true}
           />
         )}
 
-        {/* User Collections */}
+        {/* Kullanıcı Koleksiyonları */}
         {collections?.map((collection) => (
           <CollectionPreview
             key={collection.id}

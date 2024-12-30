@@ -27,19 +27,19 @@ async function Header() {
             <Link href="/dashboard#collections">
               <Button variant="outline" className="flex items-center gap-2">
                 <FolderOpen size={18} />
-                <span className="hidden md:inline">Collections</span>
+                <span className="hidden md:inline">Koleksiyonlar</span>
               </Button>
             </Link>
           </SignedIn>
           <Link href="/journal/write">
             <Button variant="journal" className="flex items-center gap-2">
               <PenBox size={18} />
-              <span className="hidden md:inline">Write New</span>
+              <span className="hidden md:inline">Yeni Yaz</span>
             </Button>
           </Link>
           <SignedOut>
             <SignInButton forceRedirectUrl="/dashboard">
-              <Button variant="outline">Login</Button>
+              <Button variant="outline">Giriş</Button>
             </SignInButton>
           </SignedOut>
           <SignedIn>

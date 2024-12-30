@@ -54,7 +54,7 @@ const CollectionPreview = ({
           <div className="h-12 w-12 rounded-full bg-gray-200 group-hover:bg-gray-300 flex items-center justify-center">
             <Plus className="h-6 w-6 text-gray-600" />
           </div>
-          <p className="text-gray-600 font-medium">Create New Collection</p>
+          <p className="text-gray-600 font-medium">Yeni Koleksiyon Oluştur</p>
         </div>
       </button>
     );
@@ -81,7 +81,7 @@ const CollectionPreview = ({
         </div>
         <div className="space-y-2">
           <div className="flex justify-between text-sm text-gray-600">
-            <span>{entries.length} entries</span>
+            <span>{entries.length} girdiler</span>
             {entries.length > 0 && (
               <span>
                 {formatDistanceToNow(new Date(entries[0].createdAt), {
@@ -96,7 +96,7 @@ const CollectionPreview = ({
                 .slice(0, 2)
                 .map((entry) => <EntryPreview key={entry.id} entry={entry} />)
             ) : (
-              <p className="text-sm text-gray-500 italic">No entries yet</p>
+              <p className="text-sm text-gray-500 italic">Henüz girdi yok</p>
             )}
           </div>
         </div>

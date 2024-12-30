@@ -137,7 +137,7 @@ export default function JournalEntryPage() {
       setIsCollectionDialogOpen(false);
       fetchCollections();
       setValue("collectionId", createdCollection.id);
-      toast.success(`Collection ${createdCollection.name} created!`);
+      toast.success(`Koleksiyon ${createdCollection.name} oluşturuldu!`);
     }
   }, [createdCollection]);
 
@@ -156,7 +156,7 @@ export default function JournalEntryPage() {
       );
 
       toast.success(
-        `Entry ${isEditMode ? "updated" : "created"} successfully!`
+        `Girdi ${isEditMode ? "güncellendi" : "oluşturuldu"} başarıyla!`
       );
     }
   }, [actionResult, actionLoading]);
@@ -175,12 +175,12 @@ export default function JournalEntryPage() {
 
   const handleSaveDraft = async () => {
     if (!isDirty) {
-      toast.error("No changes to save");
+      toast.error("Kaydedilecek değişiklik yok");
       return;
     }
     const result = await saveDraftFn(formData);
     if (result?.success) {
-      toast.success("Draft saved successfully");
+      toast.success("Taslak başarıyla kaydedildi");
     }
   };
 
@@ -199,7 +199,7 @@ export default function JournalEntryPage() {
     <div className="container mx-auto px-4 py-8">
       <form onSubmit={onSubmit} className="space-y-2  mx-auto">
         <h1 className="text-5xl md:text-6xl gradient-title">
-          {isEditMode ? "Edit Entry" : "What's on your mind?"}
+          {isEditMode ? "Girdiyi Düzenle" : "Aklınızdan ne geçiyor?"}
         </h1>
 
         {isLoading && (
@@ -207,11 +207,11 @@ export default function JournalEntryPage() {
         )}
 
         <div className="space-y-2">
-          <label className="text-sm font-medium">Title</label>
+          <label className="text-sm font-medium">Başlık</label>
           <Input
             disabled={isLoading}
             {...register("title")}
-            placeholder="Give your entry a title..."
+            placeholder="Girdinize bir başlık verin..."
             className={`py-5 md:text-md ${
               errors.title ? "border-red-500" : ""
             }`}
@@ -222,14 +222,14 @@ export default function JournalEntryPage() {
         </div>
 
         <div className="space-y-2">
-          <label className="text-sm font-medium">How are you feeling?</label>
+          <label className="text-sm font-medium">Nasıl hissediyorsunuz?</label>
           <Controller
             name="mood"
             control={control}
             render={({ field }) => (
               <Select onValueChange={field.onChange} value={field.value}>
                 <SelectTrigger className={errors.mood ? "border-red-500" : ""}>
-                  <SelectValue placeholder="Select a mood..." />
+                  <SelectValue placeholder="Bir ruh hali seçin..." />
                 </SelectTrigger>
                 <SelectContent>
                   {Object.values(MOODS).map((mood) => (
@@ -250,7 +250,7 @@ export default function JournalEntryPage() {
 
         <div className="space-y-2">
           <label className="text-sm font-medium">
-            {getMoodById(getValues("mood"))?.prompt ?? "Write your thoughts..."}
+            {getMoodById(getValues("mood"))?.prompt ?? "Düşüncelerinizi yazın..."}
           </label>
           <Controller
             name="content"
@@ -281,7 +281,7 @@ export default function JournalEntryPage() {
 
         <div className="space-y-2">
           <label className="text-sm font-medium">
-            Add to Collection (Optional)
+            Koleksiyona Ekle (İsteğe Bağlı)
           </label>
           <Controller
             name="collectionId"
@@ -298,7 +298,7 @@ export default function JournalEntryPage() {
                 value={field.value}
               >
                 <SelectTrigger>
-                  <SelectValue placeholder="Choose a collection..." />
+                  <SelectValue placeholder="Bir koleksiyon seçin..." />
                 </SelectTrigger>
                 <SelectContent>
                   {collections?.map((collection) => (
@@ -308,7 +308,7 @@ export default function JournalEntryPage() {
                   ))}
                   <SelectItem value="new">
                     <span className="text-orange-600">
-                      + Create New Collection
+                      + Yeni Koleksiyon Oluştur
                     </span>
                   </SelectItem>
                 </SelectContent>
@@ -326,7 +326,7 @@ export default function JournalEntryPage() {
               disabled={savingDraft || !isDirty}
             >
               {savingDraft && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-              Save as Draft
+              Taslak Olarak Kaydet
             </Button>
           )}
           <Button
@@ -335,7 +335,7 @@ export default function JournalEntryPage() {
             disabled={actionLoading || !isDirty}
           >
             {actionLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-            {isEditMode ? "Update" : "Publish"}
+            {isEditMode ? "Güncelle" : "Yayınla"}
           </Button>
           {isEditMode && (
             <Button
@@ -345,7 +345,7 @@ export default function JournalEntryPage() {
               }}
               variant="destructive"
             >
-              Cancel
+              İptal
             </Button>
           )}
         </div>
